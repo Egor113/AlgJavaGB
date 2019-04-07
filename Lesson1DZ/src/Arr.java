@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Arr {
     private int [] array;
@@ -44,6 +45,13 @@ public class Arr {
             if (array[i] == el) find = true;
         }
         return find;
+    }
+
+    public void setRandom(int bound){
+        Random rnd = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rnd.nextInt(bound);
+        }
     }
 }
 
