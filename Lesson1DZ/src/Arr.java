@@ -37,6 +37,14 @@ public class Arr {
         index--;
         array[index] = 0;
     }
+    
+    public boolean findElement(int el){
+        boolean find = false;
+        for (int i = 0; i < index; i++) {
+            if (array[i] == el) find = true;
+        }
+        return find;
+    }
 }
 
 

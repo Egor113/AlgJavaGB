@@ -12,5 +12,6 @@ public class Main {
         arr.printArray();
         arr.addElement(7);
         arr.printArray();
+        System.out.println(arr.findElement(1));
     }
 }
