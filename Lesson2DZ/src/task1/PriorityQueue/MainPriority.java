@@ -1,4 +1,4 @@
-package task1.PriorityQueue;
+package task1.priorityQueue;
 
 public class MainPriority {
     public static void main(String[] args) {
