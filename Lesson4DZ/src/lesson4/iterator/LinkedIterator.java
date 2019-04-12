@@ -10,8 +10,11 @@ public class LinkedIterator {
 //        ArrayList
 //        LinkedList;
         LinkIterator iterator = new LinkIterator(list);
-
-        iterator.insertAfter();
+        iterator.insertBefore("Ivan", 35);
+        iterator.insertBefore("Oleg", 21);
+        iterator.insertBefore("Anna", 25);
+        iterator.display();
+//        iterator.insertAfter();
 
     }
 }

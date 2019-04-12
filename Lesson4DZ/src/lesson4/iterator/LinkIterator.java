@@ -4,7 +4,7 @@ import lesson4.Link;
 import lesson4.list.LinkedList;
 
 public class LinkIterator {
-    private Link currect;
+    private Link current;
     private Link prev;
     private LinkedList list;
 
@@ -14,23 +14,27 @@ public class LinkIterator {
     }
 
     private void reset() {
-        currect = list.getFirst();
+        current = list.getFirst();
         prev = null;
     }
 
     public void nexLink() {
-        prev = currect;
-        currect = currect.next;
+        prev = current;
+        current = current.next;
     }
 
     /**
      * @return - true, если дошел до конца
      */
     public boolean atEnd() {
-        return (currect.next == null);
+        return (current.next == null);
     }
 
-    public void insertBefore() {
+    public void insertBefore(String name, int age) {
+        list.first = current;
+        prev = current;
+        list.insert(name, age);
+        current = list.first;
     }
 
     public void insertAfter() {
@@ -40,8 +44,16 @@ public class LinkIterator {
         return null;
     }
 
-    public Link getCurrect() {
-        return currect;
+    public Link getCurrent() {
+        return current;
+    }
+
+    public void display() {
+        Link present = list.getFirst();
+        while (present != null) {
+            present.displayNode();
+            present = present.next;
+        }
     }
 
 
