@@ -13,7 +13,7 @@ public class LinkIterator {
         reset();
     }
 
-    private void reset() {
+    public void reset() {
         current = list.getFirst();
         prev = null;
     }
@@ -49,10 +49,10 @@ public class LinkIterator {
     }
 
     public void display() {
-        Link present = list.getFirst();
-        while (present != null) {
-            present.displayNode();
-            present = present.next;
+        reset();
+        while (!(current == null)){
+            this.current.displayNode();
+            this.nexLink();
         }
     }
 
