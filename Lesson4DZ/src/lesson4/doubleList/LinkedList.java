@@ -45,13 +45,13 @@ public class LinkedList {
 
     public Link find(String name) {
         Link current = first;
-        while (current.name != name) {
-            if (current.name == null)
-                return null;
-            else
-                current = current.next;
+        while (current.next != null) {
+            if (current.name == name){
+                return current;
+            }
+            current = current.next;
         }
-        return current;
+        return null;
     }
 
     public Link delete(String name) {

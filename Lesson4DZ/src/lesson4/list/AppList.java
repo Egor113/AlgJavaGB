@@ -3,7 +3,7 @@ package lesson4.list;
 public class AppList {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.insert("Anton", 22);
+//        list.insert("Anton", 22);
         list.insert("Oleg", 26);
         list.insert("Igor", 31);
 //       Igor -> Oleg -> Anton
