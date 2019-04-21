@@ -12,6 +12,14 @@ public class Rucksack {
         this.maxWeight = maxWeight;
     }
 
+    public int getMaxWeight() {
+        return maxWeight;
+    }
+
+    public int getBestPrice() {
+        return bestPrice;
+    }
+
     public ArrayList<Item> getBestItems() {
         return bestItems;
     }
@@ -75,24 +83,22 @@ public class Rucksack {
         }
 
     }
-
-    public int getMaxValue(Item[] items){
+    //Рассчет "задачи о рюкзаке" с помощью методов перебора
+    public int getMaxValue(ArrayList<Item> items){
         int localMaxValue = 0;
-        int localMaxWeight = 0;
         int sumValue = 0;
         int sumWeight = 0;
-        for (int i = 0; i < items.length; i++) {
-            sumWeight = items[i].weight;
-            sumValue = items[i].value;
-            for (int j = 0; j < items.length; j++) {
-                if ((!items[i].name.equals(items[j].name)) && (sumWeight + items[j].weight <= maxWeight)){
-                    sumWeight += items[j].weight;
-                    sumValue += items[j].value;
+        for (int i = 0; i < items.size(); i++) {
+            sumWeight = items.get(i).weight;
+            sumValue = items.get(i).value;
+            for (int j = 0; j < items.size(); j++) {
+                if ((!items.get(i).name.equals(items.get(j).name)) && (sumWeight + items.get(j).weight <= maxWeight)){
+                    sumWeight += items.get(j).weight;
+                    sumValue += items.get(j).value;
                 }
             }
             if (sumValue > localMaxValue){
                 localMaxValue = sumValue;
-                localMaxWeight = sumWeight;
             }
             sumValue = 0;
             sumWeight = 0;
