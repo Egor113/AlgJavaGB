@@ -6,12 +6,12 @@ public class MainRucksack {
     public static void main(String[] args) {
         ArrayList<Item> items = new ArrayList<>();
         items.add(new Item("Compass",1,8));
-        //items.add(new Item("Camera",5,2));
+        items.add(new Item("Camera",5,2));
         items.add(new Item("Knife",2,10));
-        //items.add(new Item("Potato",5,6));
+        items.add(new Item("Potato",5,6));
         items.add(new Item("Fork",2,2));
 
-        Rucksack rucksack = new Rucksack(3);
+        Rucksack rucksack = new Rucksack(6);
         System.out.println("Суммарная ценность вещей в рюкзаке,");
         System.out.println("рассчитанная методом перебора: "  + rucksack.getMaxValue(items));
         System.out.println();
