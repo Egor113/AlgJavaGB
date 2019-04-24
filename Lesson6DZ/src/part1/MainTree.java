@@ -20,12 +20,17 @@ public class MainTree {
         for (int i = 0; i < people.length; i++) {
             tree.insert(people[i]);
         }
-        //tree.find(57).display();
+        System.out.println("Элемент с id = 57: ");
+        tree.find(57).display();
+        System.out.println();
+        System.out.println("Исходное дерево: ");
         tree.display();
-        //tree.max().display();
+        System.out.println();
+        System.out.println("Максимальный элемент дерева: ");
+        tree.max().display();
         System.out.println();
         tree.delete(50);
-
+        System.out.println("Дерево после удаления элемента с id = 50: ");
         tree.display();
     }
 }
