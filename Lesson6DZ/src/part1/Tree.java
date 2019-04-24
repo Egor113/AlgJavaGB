@@ -113,7 +113,7 @@ public class Tree {
             if (current == root) root = successor;
             else if (isLeftChild) parent.leftChild = successor;
             else parent.rightChild = successor;
-            successor.rightChild = current.leftChild;
+            successor.leftChild = current.leftChild;
         }
         return true;
     }
