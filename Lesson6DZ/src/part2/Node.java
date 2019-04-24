@@ -1,11 +1,11 @@
 package part2;
 
 public class Node {
-    public int x;
+    public int number;
     public Node leftChild;
     public Node rightChild;
 
     public void display() {
-        System.out.println("X :" + x);
+        System.out.println("Number :" + number);
     }
 }

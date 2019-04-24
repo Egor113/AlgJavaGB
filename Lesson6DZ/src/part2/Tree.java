@@ -6,8 +6,8 @@ public class Tree {
 
     public Node find(int key) {
         Node current = root;
-        while (current.person.id != key) {
-            if (key < current.person.id) {
+        while (current.number != key) {
+            if (key < current.number) {
                 current = current.leftChild;
             } else {
                 current = current.rightChild;
@@ -17,16 +17,16 @@ public class Tree {
         return current;
     }
 
-    public void insert(Person p) {
+    public void insert(Integer n) {
         Node node = new Node();
-        node.person = p;
+        node.number = n;
         if (root == null) root = node;
         else {
             Node current = root;
             Node parent;
             while (true) {
                 parent = current;
-                if (p.id < current.person.id) {
+                if (n < current.number) {
                     current = current.leftChild;
                     if (current == null) {
                         parent.leftChild = node;
@@ -79,9 +79,9 @@ public class Tree {
         Node current = root;
         Node parent = root;
         boolean isLeftChild = true;
-        while (current.person.id != key) {
+        while (current.number != key) {
             parent = current;
-            if (key < current.person.id) {
+            if (key < current.number) {
                 isLeftChild = true;
                 current = current.leftChild;
             } else {
