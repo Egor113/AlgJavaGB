@@ -50,6 +50,10 @@ public class Tree {
         }
     }
 
+    public void display(){
+        inOrder(root);
+    }
+
     public Node min() {
         Node current, last = null;
         current = root;
