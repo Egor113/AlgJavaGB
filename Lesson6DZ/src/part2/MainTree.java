@@ -2,32 +2,34 @@ package part2;
 
 import part1.Tree;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class MainTree {
     public static void main(String[] args) {
         Tree tree = new Tree();
-        Person[] people = new Person[]{
-                new Person("Ivan",60,60),
-                new Person("Anton",66,66),
-                new Person("Anna",70,70),
-                new Person("Sergey",81,81),
-                new Person("Egor",67,67),
-                new Person("Denis",50,50),
-                new Person("Oleg",55,55),
-                new Person("Nick",57,57),
-                new Person("Dima",40,40),
-                new Person("Vlad",45,45),
-                new Person("Nikita",31,31),
-        };
-
-        for (int i = 0; i < people.length; i++) {
-            tree.insert(people[i]);
+        ArrayList<ArrayList> treeList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            ArrayList<Integer> list = new ArrayList<>();
+            Random rnd = new Random();
+            for (int j = 0; j < 10; j++) {
+                list.add(-100 + rnd.nextInt(200));
+            }
+            treeList.add(list);
         }
-        //tree.find(57).display();
-        tree.display();
-        //tree.max().display();
-        System.out.println();
-        tree.delete(50);
 
-        tree.display();
+        for (int i = 0; i < treeList.size(); i++) {
+            for (int j = 0; j < treeList.get(i).size(); j++) {
+                System.out.print(treeList.get(i).get(j) + " ");
+            }
+            System.out.println();
+        }
+
+        for (int i = 0; i < treeList.size(); i++) {
+            for (int j = 0; j < treeList.get(i).size(); j++) {
+                System.out.print(treeList.get(i).get(j) + " ");
+            }
+            System.out.println();
+        }
     }
 }
