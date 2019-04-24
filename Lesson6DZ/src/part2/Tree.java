@@ -17,7 +17,7 @@ public class Tree {
         return current;
     }
 
-    public void insert(Integer n) {
+    public void insert(int n) {
         Node node = new Node();
         node.number = n;
         if (root == null) root = node;
