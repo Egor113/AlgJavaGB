@@ -20,7 +20,12 @@ public class MainTree {
         for (int i = 0; i < people.length; i++) {
             tree.insert(people[i]);
         }
-        tree.find(57).display();
+        //tree.find(57).display();
+        tree.display();
+        //tree.max().display();
+        System.out.println();
+        tree.delete(50);
+
         tree.display();
     }
 }
