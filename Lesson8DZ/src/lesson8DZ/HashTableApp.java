@@ -13,15 +13,20 @@ public class HashTableApp {
         list.add(new ChainItem(35));
         list.add(new ChainItem(78));
         list.add(new ChainItem(55));
-        list.add(new ChainItem(22));
+        //list.add(new ChainItem(22));
         list.add(new ChainItem(40));
 
         for (ChainItem item: list) {
             table.insert(item);
         }
-        //table.display();
-        //System.out.println();
-        System.out.println(table.find(11).getKey());
+        table.display();
+        System.out.println();
+        System.out.println("Deleted element: " + table.delete(40).getKey());
+        table.insert(new ChainItem(22));
+        System.out.println();
+        table.display();
+        System.out.println();
+        System.out.println("Found element with key = " + "35: " +table.find(35).getKey());
 
     }
 }

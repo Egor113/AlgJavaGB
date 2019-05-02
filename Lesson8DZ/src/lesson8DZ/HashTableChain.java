@@ -26,6 +26,12 @@ public class HashTableChain {
         if (hashArray[hashVal] == null) {
             hashArray[hashVal] = new ChainItemList();
         }
+        for (int i = 0; i < hashArray[hashVal].getList().size(); i++) {
+            if (hashArray[hashVal].getList().get(i).equals(nonItem)){
+                hashArray[hashVal].getList().set(i,item);
+                return;
+            }
+        }
         hashArray[hashVal].addItem(item);
     }
 
@@ -56,14 +62,15 @@ public class HashTableChain {
 
     public ChainItem delete(int key) {
         int hashVal = hashFunc(key);
-        for (int i = 0; i < sizeArr; i++) {
-            if (hashArray[i] != null){
-                for (int j = 0; j < hashArray[i].getList().size(); j++) {
-                    if (hashArray[i].getList().get(j).getKey() == key){
-                        return hashArray[i].getList().get(j);
-                    }
+        while (hashArray[hashVal] != null) {
+            for (int j = 0; j < hashArray[hashVal].getList().size(); j++) {
+                if (hashArray[hashVal].getList().get(j).getKey() == key){
+                    ChainItem temp = hashArray[hashVal].getList().get(j);
+                    hashArray[hashVal].getList().set(j, nonItem);
+                    return temp;
                 }
             }
+            hashVal %= sizeArr;
         }
         return null;
     }
