@@ -43,7 +43,19 @@ public class HashTableChain {
 
     public ChainItem find(int key) {
         int hashVal = hashFunc(key);
-        hashVal %= sizeArr;
+        while (hashArray[hashVal] != null) {
+            for (int j = 0; j < hashArray[hashVal].getList().size(); j++) {
+                if (hashArray[hashVal].getList().get(j).getKey() == key){
+                    return hashArray[hashVal].getList().get(j);
+                }
+            }
+            hashVal %= sizeArr;
+        }
+        return null;
+    }
+
+    public ChainItem delete(int key) {
+        int hashVal = hashFunc(key);
         for (int i = 0; i < sizeArr; i++) {
             if (hashArray[i] != null){
                 for (int j = 0; j < hashArray[i].getList().size(); j++) {
@@ -55,21 +67,6 @@ public class HashTableChain {
         }
         return null;
     }
-//
-//    public ChainItem delete(int key) {
-//        int hashVal = hashFunc(key);
-//        int secondHashVal = secondHashFunc(key);
-//        while (hashArray[hashVal] != null) {
-//            if (hashArray[hashVal].getKey() == key) {
-//                ChainItem temp = hashArray[hashVal];
-//                hashArray[hashVal] = nonItem;
-//                return temp;
-//            }
-//            hashVal += secondHashVal;
-//            hashVal %= sizeArr;
-//        }
-//        return null;
-//    }
 //
 //    public void display() {
 //        for (int i = 0; i < sizeArr; i++) {
