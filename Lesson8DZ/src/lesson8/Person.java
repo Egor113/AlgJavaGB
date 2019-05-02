@@ -1,4 +1,4 @@
-package hashTable;
+package lesson8;
 
 import java.util.Objects;
 

@@ -1,18 +1,18 @@
-package hashTable;
+package lesson8;
 
 import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
         HashTable table = new HashTable(5);
-        ArrayList<DataItem> list = new ArrayList<>();
-        list.add(new DataItem(10));
-        list.add(new DataItem(25));
-        list.add(new DataItem(30));
-        list.add(new DataItem(99));
-        list.add(new DataItem(20));
+        ArrayList<Item> list = new ArrayList<>();
+        list.add(new Item(10));
+        list.add(new Item(25));
+        list.add(new Item(30));
+        list.add(new Item(99));
+        list.add(new Item(20));
 
-        for (DataItem item: list) {
+        for (Item item: list) {
             table.insert(item);
         }
         table.display();

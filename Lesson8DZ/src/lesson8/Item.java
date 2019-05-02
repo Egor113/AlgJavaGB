@@ -1,9 +1,9 @@
-package hashTable;
+package lesson8;
 
-public class DataItem {
+public class Item {
     private int data;
 
-    public DataItem(int data) {
+    public Item(int data) {
         this.data = data;
     }
 

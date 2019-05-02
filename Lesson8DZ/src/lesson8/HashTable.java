@@ -1,14 +1,14 @@
-package hashTable;
+package lesson8;
 
 public class HashTable {
-    private DataItem[] hashArray;
+    private Item[] hashArray;
     private int sizeArr;
-    private DataItem nonItem;
+    private Item nonItem;
 
     public HashTable(int size) {
         this.sizeArr = size;
-        this.hashArray = new DataItem[sizeArr];
-        nonItem = new DataItem(-1);
+        this.hashArray = new Item[sizeArr];
+        nonItem = new Item(-1);
     }
 
     public int hashFunc(int key) {
@@ -19,7 +19,7 @@ public class HashTable {
         return 33 - key % 33;
     }
 
-    public DataItem find(int key) {
+    public Item find(int key) {
         int hashVal = hashFunc(key);
         int secondHashVal = secondHashFunc(key);
         while (hashArray[hashVal] != null) {
@@ -47,7 +47,7 @@ public class HashTable {
         return true;
     }
 
-    public void insert(DataItem item) {
+    public void insert(Item item) {
         int key = item.getKey();
         int hashVal = hashFunc(key);
         int secondHashVal = secondHashFunc(key);
@@ -58,12 +58,12 @@ public class HashTable {
         hashArray[hashVal] = item;
     }
 
-    public DataItem delete(int key) {
+    public Item delete(int key) {
         int hashVal = hashFunc(key);
         int secondHashVal = secondHashFunc(key);
         while (hashArray[hashVal] != null) {
             if (hashArray[hashVal].getKey() == key) {
-                DataItem temp = hashArray[hashVal];
+                Item temp = hashArray[hashVal];
                 hashArray[hashVal] = nonItem;
                 return temp;
             }
