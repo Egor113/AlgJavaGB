@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList a = new ArrayList();
-        a.trimToSize();
+        HashTable table = new HashTable(5);
+        ArrayList<DataItem> list = new ArrayList<>();
+        list.add(new DataItem(10));
+        list.add(new DataItem(25));
+        list.add(new DataItem(30));
+        list.add(new DataItem(99));
+        list.add(new DataItem(20));
 
-        getPrime(3);
-
-//        Person p = new Person("Bob");
-//        Person p1 = new Person("Mike");
-//        if (p.equals(p1)) System.out.println("true");
-//        else System.out.println("false");
-//
-//        System.out.println(p.hashCode());
-//        System.out.println(p1.hashCode());
+        for (DataItem item: list) {
+            table.insert(item);
+        }
+        table.display();
     }
 
     public static int getPrime(int min) {
