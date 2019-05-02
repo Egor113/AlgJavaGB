@@ -15,7 +15,9 @@ public class App {
         for (Item item: list) {
             table.insert(item);
         }
-        table.display();
+        //table.display();
+        //System.out.println(table.find(33).getKey());
+        System.out.println(table.delete(11).getKey());
     }
 
     public static int getPrime(int min) {
