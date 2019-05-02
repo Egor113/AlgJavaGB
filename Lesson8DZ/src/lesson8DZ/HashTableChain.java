@@ -31,21 +31,6 @@ public class HashTableChain {
         }
         return null;
     }
-    //3 -> 5 -> 7 ->11
-    //5 -> 1 and 5
-    //6 -> 1 and 2 and 3 and 6
-    private int getPrime(int min) {
-        for (int i = min + 1; true; i++) {
-            if (isPrime(i)) return i;
-        }
-    }
-
-    private boolean isPrime(int n) {
-        for (int j = 2; (j * j <= n); j++) {
-            if (n % j == 0) return false;
-        }
-        return true;
-    }
 
     public void insert(ChainItem item) {
         int key = item.getKey();
