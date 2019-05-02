@@ -7,7 +7,7 @@ public class HashTableChain {
 
     public HashTableChain(int size) {
         this.sizeArr = size;
-        this.hashArray = new ChainItem[sizeArr];
+        this.hashArray = new ChainItemList[sizeArr];
         nonItem = new ChainItem(-1);
     }
 
@@ -17,6 +17,17 @@ public class HashTableChain {
 
     public int secondHashFunc(int key) {
         return 33 - key % 33;
+    }
+
+    public void insert(ChainItem item) {
+        int key = item.getKey();
+        int hashVal = hashFunc(key);
+        int secondHashVal = secondHashFunc(key);
+        while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
+            hashVal += secondHashVal;
+            hashVal %= sizeArr;
+        }
+        hashArray[hashVal] = item;
     }
 
     public ChainItem find(int key) {
@@ -30,17 +41,6 @@ public class HashTableChain {
             hashVal %= sizeArr;
         }
         return null;
-    }
-
-    public void insert(ChainItem item) {
-        int key = item.getKey();
-        int hashVal = hashFunc(key);
-        int secondHashVal = secondHashFunc(key);
-        while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
-            hashVal += secondHashVal;
-            hashVal %= sizeArr;
-        }
-        hashArray[hashVal] = item;
     }
 
     public ChainItem delete(int key) {
