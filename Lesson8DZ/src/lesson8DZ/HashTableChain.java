@@ -1,7 +1,7 @@
 package lesson8DZ;
 
 public class HashTableChain {
-    private ChainItem[] hashArray;
+    private ChainItemList[] hashArray;
     private int sizeArr;
     private ChainItem nonItem;
 
